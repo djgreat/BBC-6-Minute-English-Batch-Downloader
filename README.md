@@ -20,7 +20,7 @@
 pip install requests beautifulsoup4
 ```
 
-## 🚀 启动指北 / Usage
+## 🚀 启动指南 / Usage
 
 只需要在终端控制台（包含本项目源码的根目录）下运行该脚本即可：
 
