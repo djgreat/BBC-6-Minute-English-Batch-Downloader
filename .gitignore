@@ -1,0 +1,10 @@
+# Files to ignore
+downloads/
+downloaded_episodes.json
+*.tmp
+__pycache__/
+*.pyc
+
+# Local debug files
+debug*.txt
+debug*.py
