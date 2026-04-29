@@ -20,6 +20,11 @@ Run the script with the following flags:
 | `--latest` | Download only the newest episode. / 仅下载最新一期。 | `python bbc_6min_downloader.py --latest` |
 | `--year YYYY` | Sync a specific year (2024-2026). / 同步指定年份。 | `python bbc_6min_downloader.py --year 2025` |
 | `--url URL` | Download a specific episode by URL. / 通过 URL 下载指定单期。 | `python bbc_6min_downloader.py --url https://www.bbc.co.uk/...` |
+| `--quiet` | Suppress non-error logs (for automation). / 静默模式（仅输出错误）。 | `python bbc_6min_downloader.py --quiet` |
+| `--json-output FILE` | Save sync results to a JSON file. / 将结果保存为 JSON。 | `python bbc_6min_downloader.py --json-output results.json` |
+
+### Environment Variables / 环境变量
+- `BBC_DOWNLOADS_DIR`: Override the default downloads directory. / 自定义下载目录。
 
 ### Output Structure / 输出结构
 ```text

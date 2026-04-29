@@ -36,6 +36,9 @@ python bbc_6min_downloader.py --year 2025
 
 # 4. 通过 URL 下载指定单期
 python bbc_6min_downloader.py --url https://www.bbc.co.uk/learningenglish/english/features/6-minute-english/ep-240425
+
+# 5. 自动化模式：静默运行并输出结果到 JSON
+python bbc_6min_downloader.py --latest --quiet --json-output results.json
 ```
 
 详细的技能定义请参考 [skill_bbc_downloader.md](./skill_bbc_downloader.md)。
@@ -78,6 +81,9 @@ python bbc_6min_downloader.py --year 2025
 
 # 4. Download a specific episode by URL
 python bbc_6min_downloader.py --url <BBC_URL>
+
+# 5. Automation Mode: Run quietly and output results to JSON
+python bbc_6min_downloader.py --latest --quiet --json-output results.json
 ```
 
 For more details, see the [Skill Definition](./skill_bbc_downloader.md).
