@@ -22,26 +22,36 @@ pip install requests beautifulsoup4
 
 ## 🚀 启动指南 / Usage
 
-只需要在终端控制台（包含本项目源码的根目录）下运行该脚本即可：
+该脚本现在支持多种运行模式：
 
 ```bash
+# 1. 增量同步（默认）：同步所有 2024-2026 的新集
 python bbc_6min_downloader.py
+
+# 2. 仅下载最新一期
+python bbc_6min_downloader.py --latest
+
+# 3. 下载指定年份
+python bbc_6min_downloader.py --year 2025
+
+# 4. 通过 URL 下载指定单期
+python bbc_6min_downloader.py --url https://www.bbc.co.uk/learningenglish/english/features/6-minute-english/ep-240425
 ```
 
-启动后，您可以喝一杯咖啡，所有的多媒体数据将全自动落入 `downloads/` 目录中。
+详细的技能定义请参考 [skill_bbc_downloader.md](./skill_bbc_downloader.md)。
 
 ---
 
 *(English documentation)*
 
-An automated Python script designed to batch download materials from BBC's "6 Minute English" episodes. It systematically scans the BBC archives from 2024 to the present, extracting the episode titles, publication dates, and parsing the page to safely download the corresponding files into an organized directory structure.
+An automated Python script designed to batch download materials from BBC's "6 Minute English" episodes. It systematically scans the BBC archives from 2024 to the present.
 
 ## Features
 
-- **Automated Directory Structuring**: Saves downloads automatically into cleanly separated folders, like `downloads/YYYY/MM/DD_EpisodeTitle/`.
-- **Full Scope Downloads**: Fetches the podcast Audio (`audio.mp3`), Transcript (`transcript.pdf`), and Worksheet (`worksheet.pdf`) effortlessly.
-- **Smart Incremental Updates**: Saves a record of completed downloads in `downloaded_episodes.json` avoiding any duplicate fetching upon subsequent runs. Simply run it periodically to sync newly emitted episodes!
-- **Error Resistant**: Automatically bypasses episodes where assets are intentionally bundled by BBC (e.g., transcripts bundled inside worksheets for vintage episodes) without halting.
+- **Automated Directory Structuring**: Saves downloads automatically into folders like `downloads/YYYY/MM/DD_EpisodeTitle/`.
+- **Full Scope Downloads**: Fetches the podcast Audio (`audio.mp3`), Transcript (`transcript.pdf`), and Worksheet (`worksheet.pdf`).
+- **Smart Incremental Updates**: Tracks history in `downloaded_episodes.json` to avoid duplicates.
+- **Error Resistant**: Handles different page structures and bundles gracefully.
 
 ## Requirements
 
@@ -54,10 +64,20 @@ pip install requests beautifulsoup4
 
 ## Usage
 
-Simply run the script in your terminal inside the root directory:
+The script now supports various running modes:
 
 ```bash
+# 1. Incremental Sync (Default): Sync all new episodes from 2024-2026
 python bbc_6min_downloader.py
+
+# 2. Download only the latest episode
+python bbc_6min_downloader.py --latest
+
+# 3. Sync a specific year
+python bbc_6min_downloader.py --year 2025
+
+# 4. Download a specific episode by URL
+python bbc_6min_downloader.py --url <BBC_URL>
 ```
 
-Sit back and watch your `downloads/` directory populate.
+For more details, see the [Skill Definition](./skill_bbc_downloader.md).
